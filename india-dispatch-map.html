@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
+  svg { display: block; width: 100%; height: 100%; }
+  .india-outline { fill: #cfe0ee; stroke: #2c455d; stroke-width: 1; }
+  .route-line { fill: none; stroke: #2c455d; stroke-width: 1; stroke-dasharray: 3 3; opacity: 0.4; }
+  .city-dot { fill: #ffffff; stroke: #2c455d; stroke-width: 1.5; cursor: pointer; transition: r 0.15s ease; }
+  .city-dot.origin { fill: #1d2d3d; }
+  .city-dot.lit { fill: #f5a623; filter: url(#glow); }
+  .city-dot:hover, .city-dot.hovered { fill: #f5a623; filter: url(#glow); }
+  .city-label { font-family: Barlow, sans-serif; font-size: 9px; fill: #1d1f20; pointer-events: none; }
+  .city-label.origin-label { font-weight: 700; }
+  .city-label.hovered { font-size: 12px; font-weight: 700; }
+  .pulse-dot { fill: #f5d76e; filter: url(#glow); }
+  .pulse-core { fill: #ffffff; }
+</style>
+</head>
+<body>
+<svg id="stage" viewBox="0 0 640 640" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3.2" result="blur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+  <g id="outline-layer"></g>
+  <g id="route-layer"></g>
+  <g id="pulse-layer"></g>
+  <g id="city-layer"></g>
+</svg>
+<script>
+(function () {
+  var ORIGIN = { name: 'Mumbai', lat: 19.0760, lon: 72.8777 };
+  var CITIES = [
+    { name: 'Pune', lat: 18.5204, lon: 73.8567 },
+    { name: 'Ahmedabad', lat: 23.0225, lon: 72.5714 },
+    { name: 'Vapi', lat: 20.3714, lon: 72.9047 },
+    { name: 'Indore', lat: 22.7196, lon: 75.8577 },
+    { name: 'Rajkot', lat: 22.3039, lon: 70.8022 },
+    { name: 'Silvassa', lat: 20.2738, lon: 72.9962 },
+    { name: 'Delhi NCR', lat: 28.7041, lon: 77.1025 },
+    { name: 'Gurugram', lat: 28.4595, lon: 77.0266 },
+    { name: 'Ludhiana', lat: 30.9010, lon: 75.8573 },
+    { name: 'Bengaluru', lat: 12.9716, lon: 77.5946 },
+    { name: 'Coimbatore', lat: 11.0168, lon: 76.9558 },
+    { name: 'Kolkata', lat: 22.5726, lon: 88.3639 },
+    { name: 'Kochi', lat: 9.9312, lon: 76.2673 },
+    { name: 'Bhubaneswar', lat: 20.2961, lon: 85.8245 }
+  ];
+  var W = 640, H = 640;
+  var svg = d3.select('#stage');
+  var started = false;
+
+  fetch('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json')
+    .then(function (r) { return r.json(); })
+    .then(function (topo) {
+      var countries = topojson.feature(topo, topo.objects.countries);
+      var india = countries.features.filter(function (f) { return f.id === '356'; })[0];
+      if (!india) return;
+
+      var projection = d3.geoMercator().fitSize([W - 40, H - 40], india);
+      projection.translate([
+        projection.translate()[0] + 20,
+        projection.translate()[1] + 20
+      ]);
+      var path = d3.geoPath().projection(projection);
+
+      svg.select('#outline-layer')
+        .append('path')
+        .attr('class', 'india-outline')
+        .attr('d', path(india));
+
+      var originXY = projection([ORIGIN.lon, ORIGIN.lat]);
+
+      var routeLayer = svg.select('#route-layer');
+      CITIES.forEach(function (c) {
+        var xy = projection([c.lon, c.lat]);
+        c.x = xy[0]; c.y = xy[1];
+        routeLayer.append('line')
+          .attr('class', 'route-line')
+          .attr('x1', originXY[0]).attr('y1', originXY[1])
+          .attr('x2', xy[0]).attr('y2', xy[1]);
+      });
+
+      var cityLayer = svg.select('#city-layer');
+      cityLayer.append('circle')
+        .attr('class', 'city-dot origin')
+        .attr('cx', originXY[0]).attr('cy', originXY[1]).attr('r', 6);
+      cityLayer.append('text')
+        .attr('class', 'city-label origin-label')
+        .attr('x', originXY[0] + 10).attr('y', originXY[1] - 8)
+        .text(ORIGIN.name);
+
+      CITIES.forEach(function (c) {
+        c.dot = cityLayer.append('circle')
+          .attr('class', 'city-dot')
+          .attr('cx', c.x).attr('cy', c.y).attr('r', 3.5);
+        c.label = cityLayer.append('text')
+          .attr('class', 'city-label')
+          .attr('x', c.x + 7).attr('y', c.y - 6)
+          .text(c.name);
+        c.dot.on('mouseenter', function () {
+          c.dot.transition().duration(120).attr('r', 7);
+          c.label.classed('hovered', true);
+        }).on('mouseleave', function () {
+          c.dot.transition().duration(120).attr('r', 3.5);
+          c.label.classed('hovered', false);
+        });
+      });
+
+      var pulseLayer = svg.select('#pulse-layer');
+
+      function animateRoute(i) {
+        if (i >= CITIES.length) return;
+        var c = CITIES[i];
+        var dur = 260;
+        var group = pulseLayer.append('g');
+        var glow = group.append('circle')
+          .attr('class', 'pulse-dot')
+          .attr('r', 4.5)
+          .attr('cx', originXY[0]).attr('cy', originXY[1]);
+        var core = group.append('circle')
+          .attr('class', 'pulse-core')
+          .attr('r', 1.8)
+          .attr('cx', originXY[0]).attr('cy', originXY[1]);
+
+        function tick(sel) {
+          sel.transition()
+            .duration(dur)
+            .ease(d3.easeLinear)
+            .attrTween('cx', function () { return d3.interpolateNumber(originXY[0], c.x); })
+            .attrTween('cy', function () { return d3.interpolateNumber(originXY[1], c.y); });
+        }
+        tick(glow);
+        tick(core);
+        core.transition().duration(dur).ease(d3.easeLinear).on('end', function () {
+          group.remove();
+          c.dot.classed('lit', true);
+          setTimeout(function () { animateRoute(i + 1); }, 25);
+        });
+      }
+
+      window.addEventListener('message', function (e) {
+        if (e.data === 'play' && !started) {
+          started = true;
+          animateRoute(0);
+        }
+      });
+    });
+})();
+</script>
+</body>
+</html>

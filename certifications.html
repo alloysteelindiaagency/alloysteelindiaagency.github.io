@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/support.js"></script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#1d3a52"/><text x="30" y="105" font-family="sans-serif" font-size="28" fill="#f2f2f3">AS</text></svg></template>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Certifications | Alloy Steel India Agency, Mumbai</title>
+  <meta name="description" content="IEC, GST and Udyam registration certificates for Alloy Steel India Agency, a Mumbai-based alloy tool steel importer and stockist.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/ds-bundle.js"></script>
+  <style>
+    body{margin:0}
+    .wrap{max-width:1200px;margin:0 auto;padding-inline:var(--space-8)}
+    @media (max-width:900px){.wrap{padding-inline:var(--space-4)}}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6)}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+  </style>
+</helmet>
+
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);min-height:100vh">
+  <div class="nav" style="border-bottom:1px solid var(--color-divider);background:var(--color-bg)">
+    <div class="wrap" style="display:flex;align-items:center;gap:var(--space-4);width:100%;max-width:1200px;margin:0 auto">
+      <div class="nav-brand" style="display:flex;align-items:center;gap:8px">
+        <span>ALLOY STEEL INDIA AGENCY</span>
+        <span class="tag tag-outline" style="font-family:var(--font-body);letter-spacing:0.08em">EST. 1999</span>
+      </div>
+      <nav style="display:flex;gap:var(--space-4);margin-left:auto">
+        <a href="./index.html">Home</a>
+        <div style="position:relative;display:flex;align-items:center" onMouseEnter="{{ openGradeMenu }}" onMouseLeave="{{ closeGradeMenu }}">
+          <a href="./index.html#products">Products ▾</a>
+          <sc-if value="{{ gradeMenuOpen }}">
+            <div class="card blueprint" style="position:absolute;top:100%;left:0;padding-top:20px;padding-inline:24px;padding-bottom:20px;background:var(--color-bg);z-index:20;display:flex;gap:32px">
+              <sc-for list="{{ gradeGroups }}" as="group" hint-placeholder-count="4">
+                <div style="min-width:150px">
+                  <div style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:700;white-space:nowrap;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--color-divider)">{{ group.category }}</div>
+                  <sc-for list="{{ group.items }}" as="g" hint-placeholder-count="3">
+                    <a href="{{ g.link }}" style="display:block;padding:6px 0;font-size:14px;white-space:nowrap">{{ g.name }}</a>
+                  </sc-for>
+                  <sc-if value="{{ group.showCompare }}">
+                    <a href="./grade-comparison.html" style="display:block;padding:6px 0;font-size:14px;white-space:nowrap;color:var(--color-accent-700)">Comparison</a>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <a href="./certifications.html">Certifications</a>
+      </nav>
+    </div>
+  </div>
+
+  <section class="wrap" style="max-width:1200px;margin:0 auto;padding-block:var(--space-8)">
+    <h6 style="color:var(--color-accent-700)">Certifications</h6>
+    <h2 style="font-size:34px;margin-bottom:var(--space-2)">Our Registered Documentation</h2>
+    <p style="max-width:60ch;opacity:0.8;margin-bottom:var(--space-6)">Official registration and compliance certificates for Alloy Steel India Agency.</p>
+
+    <div class="grid-3">
+      <sc-for list="{{ certs }}" as="cert" hint-placeholder-count="3">
+        <div class="card blueprint">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <a href="{{ cert.file }}" target="_blank" rel="noopener" style="aspect-ratio:3/4;position:relative;overflow:hidden;background:var(--color-neutral-300);display:block">
+            <img src="{{ cert.thumb }}" alt="{{ cert.title }} preview" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+          </a>
+          <div class="card-kicker" style="margin-top:var(--space-3)">Certificate</div>
+          <div class="card-title">{{ cert.title }}</div>
+          <p class="card-body">{{ cert.desc }}</p>
+          <a class="btn btn-secondary" href="{{ cert.file }}" target="_blank" rel="noopener" style="margin-top:var(--space-3);font-size:14px;padding:10px 16px">
+            View PDF
+          </a>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background:var(--color-accent-900);color:var(--color-bg);padding-block:var(--space-8)">
+    <div class="wrap" style="max-width:1200px;margin:0 auto">
+      <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;font-size:13px;margin-bottom:var(--space-4);margin-top:var(--space-6)">
+        <a href="./index.html" style="color:var(--color-bg)">Home</a>
+        <a href="./index.html#products" style="color:var(--color-bg)">Products</a>
+        <a href="./index.html#products" style="color:var(--color-bg);text-decoration:underline">Grade Finder</a>
+        <a href="./factory-gallery.html" style="color:var(--color-bg)">Gallery</a>
+        <a href="./certifications.html" style="color:var(--color-bg)">Certifications</a>
+        <a href="./index.html#why-us" style="color:var(--color-bg)">Why Us</a>
+        <a href="./index.html#about" style="color:var(--color-bg)">About</a>
+        <a href="./index.html#contact" style="color:var(--color-bg)">Contact</a>
+      </div>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-3);font-size:12px;opacity:0.7">
+        <div>Alloy Steel India Agency · Naigaon · Goregaon East · Kalamboli, Mumbai</div>
+        <div>agarwalsteelgroup@hotmail.com</div>
+      </div>
+      <div class="hr" style="background:color-mix(in srgb, var(--color-bg) 20%, transparent);margin-top:var(--space-6);margin-bottom:var(--space-4)"></div>
+      <p style="text-align:center;font-size:13px;opacity:0.6;margin:0">© <span>{{ copyrightYear }}</span> Alloy Steel India Agency. All Rights Reserved.</p>
+    </div>
+  </section>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { gradeMenuOpen: false };
+  renderVals() {
+    return {
+      gradeMenuOpen: this.state.gradeMenuOpen,
+      copyrightYear: new Date().getFullYear(),
+      openGradeMenu: () => this.setState({ gradeMenuOpen: true }),
+      closeGradeMenu: () => this.setState({ gradeMenuOpen: false }),
+      gradeGroups: [
+        { category: 'Plastic Mould Steels', showCompare: true, items: [
+          { name: '2311', link: './grade-2311.html' },
+          { name: '2738', link: './grade-2738.html' },
+          { name: '2738HH', link: './grade-2738hh.html' },
+          { name: '2083', link: './grade-2083.html' },
+        ]},
+        { category: 'Hot Work Tool Steel', items: [
+          { name: 'H13', link: './grade-h13.html' },
+        ]},
+        { category: 'Cold Work Tool Steel', items: [
+          { name: 'D2', link: './grade-d2.html' },
+          { name: 'D3 (WPS)', link: './grade-d3.html' },
+        ]},
+        { category: 'Engineering Steels', items: [
+          { name: 'EN Series', link: './grade-en-series.html' },
+          { name: 'MS', link: './grade-ms.html' },
+        ]},
+      ],
+      certs: [
+        { title: 'IEC Certificate', desc: 'Import Export Code registration certificate.', file: 'assets/certs/iec-certificate.pdf', thumb: 'images/WhatsApp Image 2026-08-01 at 14.19.07 (2).jpeg' },
+        { title: 'GST Certificate', desc: 'Goods & Services Tax registration certificate.', file: 'assets/certs/gst-certificate.pdf', thumb: 'images/WhatsApp Image 2026-08-01 at 14.19.07.jpeg' },
+        { title: 'Udyam Registration', desc: 'MSME Udyam registration certificate.', file: 'assets/certs/udyam-registration.pdf', thumb: 'images/WhatsApp Image 2026-08-01 at 14.19.07 (1).jpeg' },
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

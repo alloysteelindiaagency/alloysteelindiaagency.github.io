@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/support.js"></script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#1d3a52"/><text x="30" y="105" font-family="sans-serif" font-size="28" fill="#f2f2f3">AS</text></svg></template>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>2083 Tool Steel | Stainless Mould Steel Mumbai | Alloy Steel India Agency</title>
+  <meta name="description" content="Imported 2083 corrosion-resistant stainless mould steel for medical, optical and food-contact tooling. Stocked in Mumbai and cut to size.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/ds-bundle.js"></script>
+  <style>
+    body{margin:0}
+    .wrap{max-width:1200px;margin:0 auto;padding-inline:var(--space-8)}
+    @media (max-width:900px){.wrap{padding-inline:var(--space-4)}}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6)}
+    @media (max-width:900px){.grid-4,.grid-3{grid-template-columns:1fr}}
+  </style>
+</helmet>
+
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);overflow-x:hidden">
+
+  <div class="nav" style="border-bottom:1px solid var(--color-divider);background:var(--color-bg);position:sticky;top:0;z-index:10">
+    <div class="wrap" style="display:flex;align-items:center;gap:var(--space-4);width:100%;max-width:1200px;margin:0 auto">
+      <div class="nav-brand" style="display:flex;align-items:center;gap:8px">
+        <span>ALLOY STEEL INDIA AGENCY</span>
+        <span class="tag tag-outline" style="font-family:var(--font-body);letter-spacing:0.08em">EST. 1999</span>
+      </div>
+      <nav style="display:flex;gap:var(--space-4);margin-left:auto">
+        <a href="./index.html">Home</a>
+        <div style="position:relative;display:flex;align-items:center" onMouseEnter="{{ openGradeMenu }}" onMouseLeave="{{ closeGradeMenu }}">
+          <a href="./index.html#products">Products ▾</a>
+          <sc-if value="{{ gradeMenuOpen }}">
+            <div class="card blueprint" style="position:absolute;top:100%;left:0;padding-top:20px;padding-inline:24px;padding-bottom:20px;background:var(--color-bg);z-index:20;display:flex;gap:32px">
+              <sc-for list="{{ gradeGroups }}" as="group" hint-placeholder-count="4">
+                <div style="min-width:150px">
+                  <div style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:700;white-space:nowrap;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--color-divider)">{{ group.category }}</div>
+                  <sc-for list="{{ group.items }}" as="g" hint-placeholder-count="3">
+                    <a href="{{ g.link }}" style="display:block;padding:6px 0;font-size:14px;white-space:nowrap">{{ g.name }}</a>
+                  </sc-for>
+                  <sc-if value="{{ group.showCompare }}">
+                    <a href="./grade-comparison.html" style="display:block;padding:6px 0;font-size:14px;white-space:nowrap;color:var(--color-accent-700)">Comparison</a>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <a href="./certifications.html">Certifications</a>
+      </nav>
+      <a class="btn btn-primary" href="https://wa.me/919821633224" target="_blank" rel="noopener" style="margin-left:var(--space-4)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="wrap" style="max-width:1200px;margin:0 auto;padding-block:var(--space-8)">
+    <div style="max-width:680px">
+      <div class="tag tag-accent" style="margin-bottom:var(--space-4)">IMPORTED &amp; STOCKED · MUMBAI</div>
+      <h1 style="font-size:52px;margin:0">2083 Tool Steel</h1>
+      <p style="font-size:17px;max-width:50ch;opacity:0.85;margin-top:var(--space-3)">Corrosion-resistant stainless mould steel imported and stocked for medical, optical and food-contact tooling.</p>
+      <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-top:var(--space-5)">
+        <div style="display:flex;align-items:center;gap:8px;font-size:15px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--color-accent-700)"><path d="M20 6L9 17l-5-5"></path></svg>Imported Ready Stock</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:15px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--color-accent-700)"><path d="M20 6L9 17l-5-5"></path></svg>Cut To Size</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:15px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--color-accent-700)"><path d="M20 6L9 17l-5-5"></path></svg>Dispatch Across India</div>
+      </div>
+      <div style="display:flex;gap:var(--space-3);margin-top:var(--space-6);flex-wrap:wrap">
+        <a class="btn btn-primary" href="tel:+919821633224" style="font-size:15px;padding:12px 20px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          Call Now
+        </a>
+        <a class="btn btn-secondary" href="https://wa.me/919821633224" target="_blank" rel="noopener" style="font-size:15px;padding:12px 20px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          WhatsApp Inquiry
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section style="background:var(--color-surface);padding-block:var(--space-8)">
+    <div class="wrap" style="max-width:900px;margin:0 auto">
+      <h6 style="color:var(--color-accent-700)">About The Grade</h6>
+      <h2 style="font-size:32px;margin-bottom:var(--space-4)">What Is 2083 &amp; Why We Stock It</h2>
+      <p style="opacity:0.85">2083 is a chromium stainless mould steel — around 13% chromium — used wherever a cavity needs to resist corrosion or take a true mirror polish. Standard mould steels rust or pit under humidity, condensation, or aggressive plastics like PVC; 2083 doesn't, which is why it's the default choice for medical and optical tooling.</p>
+      <p style="opacity:0.85">Beyond corrosion resistance, its fine, clean microstructure is what lets toolmakers polish it to an optical-grade finish for lens moulds, and it hardens up well when a cavity needs both the corrosion resistance and wear resistance for long production runs.</p>
+      <p style="opacity:0.85">We stock 2083 in both annealed and pre-hardened condition, and cut it to size across a wide range of block dimensions.</p>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="wrap" style="max-width:1200px;margin:0 auto;padding-block:var(--space-8)">
+    <h6 style="color:var(--color-accent-700)">Key Features</h6>
+    <h2 style="font-size:32px;margin-bottom:var(--space-6)">Why Mould Makers Choose 2083</h2>
+    <div class="grid-4" style="display:grid;grid-template-columns:repeat(2,1fr);gap:0 var(--space-8)">
+      <sc-for list="{{ features }}" as="f" hint-placeholder-count="4">
+        <div style="display:flex;align-items:center;gap:12px;padding-block:var(--space-3);border-bottom:1px solid var(--color-divider)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent-700);flex:none"><circle cx="12" cy="12" r="9"></circle><path d="M8 12l3 3 5-6"></path></svg>
+          <div style="font-size:17px;font-family:var(--font-heading)">{{ f }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section style="background:var(--color-surface);padding-block:var(--space-8)">
+    <div class="wrap" style="max-width:1200px;margin:0 auto">
+      <h6 style="color:var(--color-accent-700)">Common Applications</h6>
+      <h2 style="font-size:32px;margin-bottom:var(--space-6)">Where 2083 Is Used</h2>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0 var(--space-8)">
+        <sc-for list="{{ applications }}" as="a" hint-placeholder-count="5">
+          <div style="display:flex;align-items:center;gap:12px;padding-block:var(--space-3);border-bottom:1px solid var(--color-divider)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent-700);flex:none"><path d="M21 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2M3 8l9 5 9-5M3 8v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8"></path></svg>
+            <div style="font-size:17px;font-family:var(--font-heading)">{{ a }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECS -->
+  <section class="wrap" style="max-width:1200px;margin:0 auto;padding-block:var(--space-8)">
+    <h6 style="color:var(--color-accent-700)">Technical Specifications</h6>
+    <h2 style="font-size:32px;margin-bottom:var(--space-6)">2083 Specification Sheet</h2>
+    <table class="table">
+      <tbody>
+        <tr><td>Grade Designation</td><td>2083 / 1.2083</td></tr>
+        <tr><td>DIN Equivalent</td><td>1.2083</td></tr>
+        <tr><td>AISI Equivalent</td><td>420 (modified)</td></tr>
+        <tr><td>Typical Hardness</td><td>Annealed: ~210–240 HB · Hardened: 50–54 HRC</td></tr>
+        <tr><td>Delivery Condition</td><td>Annealed or pre-hardened, per order</td></tr>
+        <tr><td>Heat Treatment Info</td><td>Harden 1000–1030°C, oil quench; temper 200–300°C</td></tr>
+        <tr><td>Density</td><td>7.70 g/cm³</td></tr>
+        <tr><td>Chemical Composition (approx. wt%)</td><td>C 0.38–0.43, Si ≤1.00, Mn ≤1.00, Cr 12.5–14.5, Mo ≤0.80</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px;opacity:0.65;margin-top:var(--space-2)">Values are typical for the standard, not a mill certificate. Actual test-certificate figures accompany each imported lot.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section style="background:var(--color-accent-900);color:var(--color-bg);padding-block:var(--space-8)">
+    <div class="wrap" style="max-width:1200px;margin:0 auto">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:var(--space-6)">
+        <div>
+          <h2 style="font-size:30px;max-width:16ch;color:var(--color-bg)">Need 2083 Cut To Your Size?</h2>
+          <p style="opacity:0.75;max-width:44ch">Call or WhatsApp us directly — most sizing and stock queries get answered same day.</p>
+        </div>
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap">
+          <a class="btn btn-primary" href="tel:+919821633224" style="font-size:15px;padding:12px 20px">+91 98216 33224</a>
+          <a class="btn btn-secondary" href="https://wa.me/919821633224" target="_blank" rel="noopener" style="font-size:15px;padding:12px 20px;border-color:var(--color-bg);color:var(--color-bg)">WhatsApp</a>
+        </div>
+      </div>
+      <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;font-size:13px;margin-bottom:var(--space-4);margin-top:var(--space-6)">
+        <a href="./index.html" style="color:var(--color-bg)">Home</a>
+        <a href="./index.html#products" style="color:var(--color-bg)">Products</a>
+        <a href="./index.html#products" style="color:var(--color-bg);text-decoration:underline">Grade Finder</a>
+        <a href="./factory-gallery.html" style="color:var(--color-bg)">Gallery</a>
+        <a href="./certifications.html" style="color:var(--color-bg)">Certifications</a>
+        <a href="./index.html#why-us" style="color:var(--color-bg)">Why Us</a>
+        <a href="./index.html#about" style="color:var(--color-bg)">About</a>
+        <a href="./index.html#contact" style="color:var(--color-bg)">Contact</a>
+      </div>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-3);font-size:12px;opacity:0.7">
+        <div>Alloy Steel India Agency · Naigaon · Goregaon East · Kalamboli, Mumbai</div>
+        <div>agarwalsteelgroup@hotmail.com</div>
+      </div>
+      <div class="hr" style="background:color-mix(in srgb, var(--color-bg) 20%, transparent);margin-top:var(--space-6);margin-bottom:var(--space-4)"></div>
+      <p style="text-align:center;font-size:13px;opacity:0.6;margin:0">© <span>{{ copyrightYear }}</span> Alloy Steel India Agency. All Rights Reserved.</p>
+    </div>
+  </section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { gradeMenuOpen: false };
+  renderVals() {
+    return {
+      gradeMenuOpen: this.state.gradeMenuOpen,
+      copyrightYear: new Date().getFullYear(),
+      openGradeMenu: () => this.setState({ gradeMenuOpen: true }),
+      closeGradeMenu: () => this.setState({ gradeMenuOpen: false }),
+      gradeGroups: [
+        { category: 'Plastic Mould Steels', showCompare: true, items: [
+          { name: '2311', link: './grade-2311.html' },
+          { name: '2738', link: './grade-2738.html' },
+          { name: '2738HH', link: './grade-2738hh.html' },
+          { name: '2083', link: './grade-2083.html' },
+        ]},
+        { category: 'Hot Work Tool Steel', items: [
+          { name: 'H13', link: './grade-h13.html' },
+        ]},
+        { category: 'Cold Work Tool Steel', items: [
+          { name: 'D2', link: './grade-d2.html' },
+          { name: 'D3 (WPS)', link: './grade-d3.html' },
+        ]},
+        { category: 'Engineering Steels', items: [
+          { name: 'EN Series', link: './grade-en-series.html' },
+          { name: 'MS', link: './grade-ms.html' },
+        ]},
+      ],
+      features: ['Corrosion Resistant', 'Excellent Polishability', 'Good Wear Resistance', 'Hardenable To High Hardness', 'Cut To Size', 'Wide Size Range'],
+      applications: ['Medical Moulds', 'Optical Lens Moulds', 'Food Packaging Moulds', 'PVC & Corrosive Plastic Moulds', 'Mirror-Finish Cavities'],
+    };
+  }
+}
+
+</script>
+</body>
+</html>
