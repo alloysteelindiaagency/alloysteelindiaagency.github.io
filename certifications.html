@@ -30,6 +30,8 @@
         <span>ALLOY STEEL INDIA AGENCY</span>
         <span class="tag tag-outline" style="font-family:var(--font-body);letter-spacing:0.08em">EST. 1999</span>
       </div>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu"><span></span><span></span><span></span></label>
       <nav style="display:flex;gap:var(--space-4);margin-left:auto">
         <a href="./index.html">Home</a>
         <div style="position:relative;display:flex;align-items:center" onMouseEnter="{{ openGradeMenu }}" onMouseLeave="{{ closeGradeMenu }}">
@@ -65,7 +67,7 @@
         <div class="card blueprint">
           <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
           <a href="{{ cert.file }}" target="_blank" rel="noopener" style="aspect-ratio:3/4;position:relative;overflow:hidden;background:var(--color-neutral-300);display:block">
-            <img src="{{ cert.thumb }}" alt="{{ cert.title }} preview" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+            <img src="{{ cert.thumb }}" alt="{{ cert.title }} preview" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
           </a>
           <div class="card-kicker" style="margin-top:var(--space-3)">Certificate</div>
           <div class="card-title">{{ cert.title }}</div>
