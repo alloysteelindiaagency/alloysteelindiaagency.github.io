@@ -2,20 +2,22 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" type="image/png" href="favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="js/support.js"></script>
+<script>window.__resources={"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"vendor/react.production.min.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"vendor/react-dom.production.min.js","https://unpkg.com/@babel/standalone@7.29.0/babel.min.js":"vendor/babel.min.js"};</script>
+<script src="./support.js"></script>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#1d3a52"/><text x="30" y="105" font-family="sans-serif" font-size="44" font-weight="bold" fill="#f2f2f3">AS</text></svg></template>
 </head>
 <body>
 <x-dc>
 <helmet>
   <title>Alloy Steel India Agency | Alloy Tool Steel Importer &amp; Stockist, Mumbai</title>
-  <meta name="description" content="Bulk importer &amp; stockist of alloy tool steel in Mumbai for 25+ years. Grades 2311, 2738, 2738HH, H13, 2083, D2, D3, EN Series &amp; MS. In-house cutting to size, nationwide dispatch.">
-    <link rel="canonical" href="https://alloysteelindiaagency.com/">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/ds-styles.css">
-  <script src="js/ds-bundle.js"></script>
+  <meta name="description" content="Bulk importer &amp; stockist of alloy tool steel in Mumbai for 25+ years. Grades 2311, 2738, 2738HH, H13, 2083, D2, D3 &amp; EN Series. In-house cutting to size, nationwide dispatch.">
+
+  <link rel="canonical" href="https://alloysteelindiaagency.com/index.html">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="ds/styles.css">
+  <script src="ds/_ds_bundle.js"></script>
   <style>
     body{margin:0}
     .wrap{max-width:1200px;margin:0 auto;padding-inline:var(--space-8)}
@@ -39,8 +41,6 @@
         <span>ALLOY STEEL INDIA AGENCY</span>
         <span class="tag tag-outline" style="font-family:var(--font-body);letter-spacing:0.08em">EST. 1999</span>
       </div>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
-      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu"><span></span><span></span><span></span></label>
       <nav style="display:flex;gap:var(--space-3);margin-left:auto;white-space:nowrap" data-nav-links="">
         <div style="position:relative;display:flex;align-items:center" onMouseEnter="{{ openGradeMenu }}" onMouseLeave="{{ closeGradeMenu }}">
           <a href="#products">Products ▾</a>
@@ -113,16 +113,17 @@
 
   <!-- HERO -->
   <section style="position:relative;min-height:560px;display:flex;align-items:center;overflow:hidden">
-    <div style="position:absolute;inset:0;background:url('images/hero-warehouse.jpg') center / cover no-repeat"></div>
+    <div style="position:absolute;inset:0;background:url('img/hero-warehouse.jpg') center / cover no-repeat"></div>
     <div style="position:absolute;inset:0;background:linear-gradient(90deg, var(--color-accent-900) 0px, color-mix(in srgb, var(--color-accent-900) 85%, transparent) 520px, color-mix(in srgb, var(--color-accent-900) 15%, transparent) 820px, transparent 980px)"></div>
     <div class="wrap" style="position:relative;max-width:1200px;margin:0 auto;padding-block:var(--space-8);width:100%">
       <div style="max-width:640px">
-        <div class="tag tag-accent" style="margin-bottom:var(--space-4)">BULK IMPORTER &amp; STOCKIST · MUMBAI</div>
-        <h1 style="font-size:60px;max-width:11ch;color:var(--color-bg);margin:0;font-weight:700;letter-spacing:-0.01em;text-transform:uppercase">Alloy Steel India Agency</h1>
+        <div class="tag tag-accent" style="margin-bottom:var(--space-4)">IMPORTER &amp; STOCKIST&nbsp;</div>
+        <h1 style="font-size:44px;max-width:none;white-space:nowrap;color:var(--color-bg);margin:0;font-weight:700;letter-spacing:-0.01em;text-transform:uppercase">Alloy Steel India Agency</h1>
         <p style="font-size:17px;max-width:46ch;color:var(--color-bg);opacity:0.9;margin-top:var(--space-4)">
-          25+ years supplying mould makers and traders with imported grades 2311, 2738, 2738HH, H13 &amp; 2083 —
-          plus a working stock of D2, D3 (WPS), EN series and MS. Huge size range, in-house cutting, and rates
-          built on bulk-import volume.&nbsp;Trusted supplier to traders, mould makers, die makers and engineering companies across India.<br></p>
+          Trusted for 25+ years by traders, mould makers, die makers and engineering companies across India.
+          We import 2311, 2738, 2738HH, H13 &amp; 2083 in bulk and hold D2, D3 (WPS) and EN series in working
+          stock — huge size range, in-house cutting, rates built on volume.
+        </p>
         <div style="display:flex;gap:var(--space-3);margin-top:var(--space-6);flex-wrap:wrap">
           <a class="btn btn-primary" href="tel:+919821633224" style="font-size:15px;padding:12px 20px">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -144,7 +145,7 @@
   <section id="why-us" style="background:var(--color-accent-900);color:var(--color-bg);padding-block:var(--space-8)">
     <div class="wrap" style="max-width:1200px;margin:0 auto">
       <h2 style="font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-300);margin-bottom:var(--space-6)">Why Buyers Stock With Us</h2>
-      <div class="grid-4">
+      <div class="grid-4" style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-6)">
         <div>
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent-300)"><rect x="3" y="4" width="18" height="18" rx="0"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
           <h3 style="font-size:20px;margin-top:var(--space-3)">25+ Years in the Trade</h3>
@@ -152,18 +153,23 @@
         </div>
         <div>
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent-300)"><path d="M21 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2"></path><path d="M3 8l9 5 9-5M3 8v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8"></path><path d="M12 13v9"></path></svg>
-          <h3 style="font-size:20px;margin-top:var(--space-3)">Bulk Importer, Deep Stock</h3>
+          <h3 style="font-size:20px;margin-top:var(--space-3)">Bulk Importer, Wide Range</h3>
           <p style="font-size:13px;opacity:0.75;margin:0">Large, ready inventory across a wide size range — held across three Mumbai locations.</p>
         </div>
         <div>
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent-300)"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path></svg>
           <h3 style="font-size:20px;margin-top:var(--space-3)">In-House Cutting to Size</h3>
-          <p style="font-size:13px;opacity:0.75;margin:0">Our own cutting machines deliver exact sizes to your spec — no third-party wait.</p>
+          <p style="font-size:13px;opacity:0.75;margin:0">Our range of horizontal and vertical cutting machines delivers exact cut sizes to your specation.</p>
         </div>
         <div>
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent-300)"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
           <h3 style="font-size:20px;margin-top:var(--space-3)">Best Rates&nbsp;</h3>
           <p style="font-size:13px;opacity:0.75;margin:0">Bulk import quantity and size range let us pass on sharper pricing to every customer.</p>
+        </div>
+        <div>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-accent-300)"><path d="M9 12l2 2 4-4"></path><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"></path></svg>
+          <h3 style="font-size:20px;margin-top:var(--space-3)">Certified Quality</h3>
+          <p style="font-size:13px;opacity:0.75;margin:0">Mill test certificates with every consignment, hardness checked against spec before release.</p>
         </div>
       </div>
     </div>
@@ -173,7 +179,7 @@
   <section style="background:var(--color-surface);padding-block:var(--space-8)">
     <div class="wrap" style="max-width:1200px;margin:0 auto">
       <h6 style="color:var(--color-accent-700)">How It Works</h6>
-      <h2 style="font-size:34px;margin-bottom:var(--space-6)">From Our Warehouses to Your Doorstep</h2>
+      <h2 style="font-size:34px;margin-bottom:var(--space-6)">Our Warehouses to Your Doorstep</h2>
       <div class="grid-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6)">
         <div style="border-top:2px solid var(--color-accent-700);padding-top:var(--space-3)">
           <div style="font-family:var(--font-heading);font-size:28px;color:var(--color-accent-700)">01</div>
@@ -231,7 +237,7 @@
       <div style="padding:var(--space-4);border:1px solid var(--color-divider)">
         <div style="font-size:12px;letter-spacing:0.04em;color:var(--color-accent-700);text-transform:uppercase">Plastic mould steel · 38-42 HRC</div>
         <a href="./grade-2738hh.html" style="font-size:26px;font-family:var(--font-heading);display:block;text-decoration:none;margin-top:2px;color:var(--color-text);font-weight:700">2738HH</a>
-        <p style="font-size:14px;opacity:0.75;margin:6px 0 var(--space-2)">Tougher, longer-run mould tooling</p>
+        <p style="font-size:14px;opacity:0.75;margin:6px 0 var(--space-2)">Tougher, longer-run moulds</p>
         <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
           <span class="tag tag-outline">Plate</span>
           <span class="tag tag-outline">Block</span>
@@ -266,7 +272,6 @@
       <a href="./grade-d2.html" class="tag tag-outline" style="font-size:13px;padding:8px 16px;text-decoration:none">D2</a>
       <a href="./grade-d3.html" class="tag tag-outline" style="font-size:13px;padding:8px 16px;text-decoration:none">D3 (WPS)</a>
       <a href="./grade-en-series.html" class="tag tag-outline" style="font-size:13px;padding:8px 16px;text-decoration:none">EN Series</a>
-      <a href="./grade-ms.html" class="tag tag-outline" style="font-size:13px;padding:8px 16px;text-decoration:none">MS</a>
     </div>
 
   </section>
@@ -278,7 +283,7 @@
         <div class="blueprint" style="aspect-ratio:1/1;order:2">
           <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
           <div style="width:100%;height:100%;position:relative;overflow:hidden;background:var(--color-neutral-300)">
-            <img src="images/cutting-floor.jpeg" alt="Cutting floor with stacked alloy steel stock" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+            <img src="img/cutting-floor.jpg" alt="Cutting floor with stacked alloy steel stock" style="width:100%;height:100%;object-fit:cover;display:block">
           </div>
         </div>
         <div style="order:1">
@@ -291,11 +296,13 @@
             cutting line, and a storage yard — built specifically around one problem: buyers need the right
             grade, the right size, and no waiting.
           </p>
-          <p style="opacity:0.85">We import in bulk directly, which means the grades we carry — 2311, 2738, 2738HH, H13 and 2083 — are held in depth and across a wide size range. That volume is also what lets us hold a working stock of general-purpose grades like D2, D3, WPS, EN series and MS alongside our core line. Our own in-house cutting machines turn that stock into exact-size pieces to a customer's drawing, so we can provide you with exactly what's needed.</p>
+          <p style="opacity:0.85">We import in bulk directly, which means the grades we carry — 2311, 2738, 2738HH, H13 and 2083 — are held in depth and across a wide size range. That volume is also what lets us hold a working stock of general-purpose grades like D2, D3 (WPS) and EN series alongside our core line. Our own in-house cutting machines turn that stock into exact-size pieces to a customer's drawing, so we can provide you with exactly what's needed.</p>
           <p style="opacity:0.85">
-            The result, after 25 years in the trade: deep, ready stock; fast turnarounds on cut sizes; and rates
-            that reflect what we pay on bulk import rather than what a small trader pays per piece.
+            Every consignment we import comes with mill test certificates, and we source only from established
+            mills whose material we have run and re-ordered over the years. Chemistry and hardness are checked
+            against spec before stock is released, so what leaves our floor matches what the grade promises.
           </p>
+          <p style="opacity:0.85">The result, after 25 years in the trade: huge, ready stock; fast turnarounds on cut sizes; and rates that reflect what we pay on bulk import rather than what a small trader pays per piece.</p>
           <div class="grid-4" style="margin-top:var(--space-6);gap:var(--space-4)">
             <div><div style="font-family:var(--font-heading);font-size:32px;color:var(--color-accent-300)">25+</div><div style="font-size:12px;opacity:0.7">Years in business</div></div>
             <div><div style="font-family:var(--font-heading);font-size:32px;color:var(--color-accent-300)">3</div><div style="font-size:12px;opacity:0.7">Mumbai locations</div></div>
@@ -355,7 +362,7 @@
     <h2 style="font-size:34px;margin-bottom:var(--space-2)">Trusted by Companies Across India</h2>
     <p style="max-width:60ch;opacity:0.8;margin-bottom:var(--space-6)">From our Mumbai warehouse, we dispatch imported alloy tool steel to mould makers, traders and fabricators nationwide.&nbsp;</p>
     <div ref="{{ mapWrapRef }}" class="blueprint" style="aspect-ratio:1/1;max-width:640px;margin:0 auto;position:relative">
-      <iframe ref="{{ mapIframeRef }}" src="india-dispatch-map.html" style="width:100%;height:100%;border:0;display:block" title="Dispatch routes from Mumbai across India"></iframe>
+      <iframe ref="{{ mapIframeRef }}" src="./india-dispatch-map.html" style="width:100%;height:100%;border:0;display:block" title="Dispatch routes from Mumbai across India"></iframe>
     </div>
   </section>
 
@@ -406,7 +413,7 @@
             </a>
           </div>
         </div>
-        <div class="blueprint" style="padding:var(--space-5);width:100%;max-width:420px">
+        <div class="blueprint" style="padding:var(--space-6);width:100%;max-width:420px">
           <h6 style="color:var(--color-accent-300);margin:0 0 var(--space-3)">Quick Inquiry</h6>
           <div style="display:flex;flex-direction:column;gap:var(--space-3)">
             <input type="text" placeholder="Your name" ref="{{ inquiryNameRef }}" style="padding:10px 12px;font-family:var(--font-body);font-size:14px;border:1px solid color-mix(in srgb, var(--color-bg) 30%, transparent);background:transparent;color:var(--color-bg)">
@@ -420,7 +427,6 @@
               <option value="D2">D2</option>
               <option value="D3 (WPS)">D3 (WPS)</option>
               <option value="EN Series">EN Series</option>
-              <option value="MS">MS</option>
               <option value="Not sure">Not sure</option>
             </select>
             <input type="text" placeholder="Size (e.g. dia / thickness)" ref="{{ inquirySizeRef }}" style="padding:10px 12px;font-family:var(--font-body);font-size:14px;border:1px solid color-mix(in srgb, var(--color-bg) 30%, transparent);background:transparent;color:var(--color-bg)">
@@ -499,7 +505,6 @@ class Component extends DCLogic {
       'H13': { name: 'H13', reason: 'Hot-work tool steel built to hold hardness under repeated heating — the standard for die casting and extrusion dies.', link: './grade-h13.html' },
       'D2': { name: 'D2', reason: 'High-chromium cold-work steel with excellent wear resistance and dimensional stability for precision dies.', link: './grade-d2.html' },
       'EN Series': { name: 'EN Series', reason: 'British-standard engineering steels (EN8/EN19/EN24/EN31) suited to shafts, gears and machine components.', link: './grade-en-series.html' },
-      'MS': { name: 'MS', reason: 'Mild steel — the economical, weldable choice for structural fabrication and machine bases.', link: './grade-ms.html' },
     };
 
     const tree = {
@@ -510,7 +515,6 @@ class Component extends DCLogic {
           { label: 'Die-casting / extrusion die', next: () => GRADES['H13'] },
           { label: 'Cutting / blanking die', next: () => GRADES['D2'] },
           { label: 'Shafts, gears or machine parts', next: () => GRADES['EN Series'] },
-          { label: 'Structural / fabrication', next: () => GRADES['MS'] },
         ],
       },
       pm_food: {
@@ -607,7 +611,6 @@ class Component extends DCLogic {
         ]},
         { category: 'Engineering Steels', items: [
           { name: 'EN Series', link: './grade-en-series.html' },
-          { name: 'MS', link: './grade-ms.html' },
         ]},
       ],
     };

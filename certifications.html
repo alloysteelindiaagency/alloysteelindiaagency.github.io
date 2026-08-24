@@ -2,9 +2,10 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" type="image/png" href="favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="js/support.js"></script>
+<script>window.__resources={"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"vendor/react.production.min.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"vendor/react-dom.production.min.js","https://unpkg.com/@babel/standalone@7.29.0/babel.min.js":"vendor/babel.min.js"};</script>
+<script src="./support.js"></script>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#1d3a52"/><text x="30" y="105" font-family="sans-serif" font-size="28" fill="#f2f2f3">AS</text></svg></template>
 </head>
 <body>
@@ -12,9 +13,10 @@
 <helmet>
   <title>Certifications | Alloy Steel India Agency, Mumbai</title>
   <meta name="description" content="IEC, GST and Udyam registration certificates for Alloy Steel India Agency, a Mumbai-based alloy tool steel importer and stockist.">
-    <link rel="canonical" href="https://alloysteelindiaagency.com/certifications.html">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/ds-bundle.js"></script>
+
+  <link rel="canonical" href="https://alloysteelindiaagency.com/certifications.html">
+  <link rel="stylesheet" href="styles.css">
+  <script src="ds/_ds_bundle.js"></script>
   <style>
     body{margin:0}
     .wrap{max-width:1200px;margin:0 auto;padding-inline:var(--space-8)}
@@ -31,8 +33,6 @@
         <span>ALLOY STEEL INDIA AGENCY</span>
         <span class="tag tag-outline" style="font-family:var(--font-body);letter-spacing:0.08em">EST. 1999</span>
       </div>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
-      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu"><span></span><span></span><span></span></label>
       <nav style="display:flex;gap:var(--space-4);margin-left:auto">
         <a href="./index.html">Home</a>
         <div style="position:relative;display:flex;align-items:center" onMouseEnter="{{ openGradeMenu }}" onMouseLeave="{{ closeGradeMenu }}">
@@ -66,16 +66,12 @@
     <div class="grid-3">
       <sc-for list="{{ certs }}" as="cert" hint-placeholder-count="3">
         <div class="card blueprint">
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          <a href="{{ cert.file }}" target="_blank" rel="noopener" style="aspect-ratio:3/4;position:relative;overflow:hidden;background:var(--color-neutral-300);display:block">
-            <img src="{{ cert.thumb }}" alt="{{ cert.title }} preview" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
-          </a>
+          <div style="aspect-ratio:3/4;position:relative;overflow:hidden;background:var(--color-neutral-300)">
+            <img src="{{ cert.thumb }}" loading="lazy" alt="{{ cert.title }} preview" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+          </div>
           <div class="card-kicker" style="margin-top:var(--space-3)">Certificate</div>
           <div class="card-title">{{ cert.title }}</div>
           <p class="card-body">{{ cert.desc }}</p>
-          <a class="btn btn-secondary" href="{{ cert.file }}" target="_blank" rel="noopener" style="margin-top:var(--space-3);font-size:14px;padding:10px 16px">
-            View PDF
-          </a>
         </div>
       </sc-for>
     </div>
@@ -129,13 +125,12 @@ class Component extends DCLogic {
         ]},
         { category: 'Engineering Steels', items: [
           { name: 'EN Series', link: './grade-en-series.html' },
-          { name: 'MS', link: './grade-ms.html' },
         ]},
       ],
       certs: [
-        { title: 'IEC Certificate', desc: 'Import Export Code registration certificate.', file: 'assets/certs/iec-certificate.pdf', thumb: 'images/WhatsApp Image 2026-08-01 at 14.19.07 (2).jpeg' },
-        { title: 'GST Certificate', desc: 'Goods & Services Tax registration certificate.', file: 'assets/certs/gst-certificate.pdf', thumb: 'images/WhatsApp Image 2026-08-01 at 14.19.07.jpeg' },
-        { title: 'Udyam Registration', desc: 'MSME Udyam registration certificate.', file: 'assets/certs/udyam-registration.pdf', thumb: 'images/WhatsApp Image 2026-08-01 at 14.19.07 (1).jpeg' },
+        { title: 'IEC Certificate', desc: 'Import Export Code registration certificate.', file: 'certs/iec-certificate.pdf', thumb: 'img/cert-iec.jpg' },
+        { title: 'GST Certificate', desc: 'Goods & Services Tax registration certificate.', file: 'certs/gst-certificate.pdf', thumb: 'img/cert-gst.jpg' },
+        { title: 'Udyam Registration', desc: 'MSME Udyam registration certificate.', file: 'certs/udyam-registration.pdf', thumb: 'img/cert-udyam.jpg' },
       ],
     };
   }
