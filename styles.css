@@ -283,3 +283,92 @@ textarea.input { min-height: 90px; resize: vertical; }
 .btn-primary { border-color: var(--color-accent); }
 .btn-ghost { border-color: transparent; }
 
+
+/* ============================================================
+   — responsive / mobile —
+   Global safety net + hamburger nav (pure CSS checkbox-hack,
+   no JS) + fixes for unclassed inline grids and tables that
+   don't have per-page responsive rules of their own.
+   ============================================================ */
+
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-x: hidden; }
+
+/* wide comparison/spec tables scroll horizontally inside this
+   wrapper instead of blowing out the page width on narrow screens */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* hamburger toggle: hidden checkbox + label, inserted as the first
+   children of .nav's .wrap, right after .nav-brand. Unchecked by
+   default and irrelevant above the breakpoint. */
+.nav-toggle-input { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+.nav-toggle-label { display: none; }
+
+/* nav collapses to a hamburger at tablet width and below — the
+   full desktop nav (brand + 6-8 links + search/WhatsApp buttons)
+   doesn't fit in one row once the viewport drops under ~900px */
+@media (max-width: 900px) {
+  .wrap { flex-wrap: wrap; row-gap: var(--space-2); }
+
+  .nav-toggle-label {
+    display: flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 34px; height: 34px; margin-left: auto; cursor: pointer; order: 1;
+    flex: none;
+  }
+  .nav-toggle-label span { display: block; width: 22px; height: 2px; background: var(--color-text); border-radius: 1px; }
+
+  .wrap > nav, .wrap > .btn.btn-primary, .wrap > .btn.btn-secondary { display: none !important; width: 100%; }
+  .nav-toggle-input:checked ~ nav,
+  .nav-toggle-input:checked ~ .btn.btn-primary,
+  .nav-toggle-input:checked ~ .btn.btn-secondary { display: flex !important; }
+
+  .wrap > nav {
+    order: 3; width: 100%; flex-direction: column; align-items: flex-start;
+    gap: var(--space-2); padding-top: var(--space-3); margin-left: 0;
+  }
+  .wrap > nav a { display: block; width: 100%; padding: var(--space-2) 0; font-size: 16px; }
+  .wrap > nav > div { width: 100%; }
+  .wrap > nav .card.blueprint { position: static; display: flex !important; flex-wrap: wrap; gap: 24px !important; margin-top: var(--space-2); }
+
+  .wrap > .btn.btn-primary, .wrap > .btn.btn-secondary { order: 4; margin-left: 0; justify-content: center; }
+}
+
+@media (max-width: 760px) {
+  /* unclassed inline two-column grids used on grade pages, the
+     comparison page, and the index.html grade-finder quiz —
+     attribute selectors on the style string, since !important is
+     the only way to beat an inline style from an external sheet */
+  [style*="grid-template-columns:repeat(2"],
+  [style*="grid-template-columns: repeat(2"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* headings that are set to large fixed pixel sizes inline on
+     hero/page-title sections — scale them down so they don't
+     overflow or force horizontal scroll on narrow phones */
+  h1[style*="font-size:60px"], h1[style*="font-size: 60px"] { font-size: 34px !important; }
+  h1[style*="font-size:52px"], h1[style*="font-size: 52px"] { font-size: 30px !important; }
+  h1[style*="font-size:48px"], h1[style*="font-size: 48px"] { font-size: 28px !important; }
+  h1[style*="font-size:44px"], h1[style*="font-size: 44px"] { font-size: 26px !important; }
+  h2[style*="font-size:34px"], h2[style*="font-size: 34px"] { font-size: 24px !important; }
+  h2[style*="font-size:30px"], h2[style*="font-size: 30px"] { font-size: 22px !important; }
+
+  /* large headings with an inline white-space:nowrap force a long
+     heading onto one line, causing it to visually clip/overflow past
+     its container once font-size is scaled down for mobile */
+  h1[style*="white-space:nowrap"], h1[style*="white-space: nowrap"] { white-space: normal !important; }
+
+  /* touch target sizing: bump the tappable height of inputs and
+     buttons (Quick Inquiry form, WhatsApp buttons, etc.) */
+  .input { min-height: 44px; font-size: 16px; }
+  .btn { min-height: 44px; padding: 10px var(--space-3); }
+  .btn-icon { width: 44px; height: 44px; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 28px; }
+  h2 { font-size: 22px; }
+  .wrap { padding-inline: var(--space-3) !important; }
+}
