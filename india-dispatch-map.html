@@ -3,8 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="vendor/d3.min.js"></script>
-<script src="vendor/topojson-client.min.js"></script>
 <style>
   html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
   svg { display: block; width: 100%; height: 100%; }
@@ -32,130 +30,175 @@
       </feMerge>
     </filter>
   </defs>
-  <g id="outline-layer"></g>
-  <g id="route-layer"></g>
+  <g id="outline-layer">
+    <path class="india-outline" d="M610.641,190.437L612.08,199.026L605.1,203.156L606.755,217.026L592.435,212.957L566.602,228.437L567.178,241.192L556.168,259.796L555.161,270.54L546.238,288.612L530.623,283.614L529.831,306.202L525.298,313.583L527.457,322.773L517.598,327.887L507.02,293.49L501.552,293.564L498.241,307.452L487.304,296.185L493.492,283.762L502.415,282.502L511.626,263.904L500.112,260.132L481.619,260.431L462.55,257.403L460.823,242.02L451.252,240.89L435.422,231.273L428.37,246.381L442.761,258.113L430.313,266.329L425.851,274.334L438.156,280.24L434.774,293.417L441.682,309.766L444.776,327.559L441.97,335.433L428.37,335.179L403.688,339.618L404.839,355.757L394.189,368.358L365.406,382.67L343.027,407.522L327.987,420.79L308.127,434.506L308.055,444.083L298.125,449.232L280.063,456.699L270.78,457.789L264.736,473.589L268.909,500.461L269.989,517.504L261.498,536.947L261.426,571.575L251.064,572.572L241.997,588.028L248.041,594.714L229.836,600.47L223.144,614.191L215.084,620L196.159,601.121L186.949,572.744L179.249,552.216L172.269,542.583L161.619,522.917L156.654,497.219L153.2,484.336L134.994,455.889L126.719,415.389L120.747,388.407L120.819,362.659L116.933,342.634L87.862,355.431L73.758,352.898L47.709,326.865L57.279,319.042L51.379,310.537L27.92,292.087L41.232,277.456L85.271,277.53L81.241,258.637L70.016,247.395L67.785,230.253L54.689,220.216L76.708,196.613L99.951,198.337L120.819,174.483L133.339,151.206L152.768,127.927L152.48,111.251L169.463,97.61L153.344,85.895L146.436,69.74L139.312,48.672L149.17,38.199L179.465,44.12L201.772,40.504L221.057,20L242.501,48.549L240.486,68.199L248.473,80.457L247.826,92.563L233.434,89.392L239.047,115.382L258.691,130.175L286.467,146.397L273.803,156.862L266.031,178.308L285.388,186.94L304.241,198.031L330.29,210.71L357.706,213.604L369.22,225.031L384.691,227.151L408.725,232.369L425.347,231.991L427.65,223.136L425.06,208.881L426.571,199.141L438.804,194.39L440.459,212.157L440.89,216.684L459.024,225.182L471.617,221.695L488.455,223.174L504.79,222.53L506.229,208.729L498.098,201.513L514.216,198.681L532.35,181.818L555.449,167.28L572.215,172.897L586.463,163.243L595.817,177.458L589.053,187.016Z"></path>
+  </g>
+  <g id="route-layer">
+    <line class="route-line" x1="121.91" y1="391.19" x2="141.47" y2="402.93"></line>
+    <line class="route-line" x1="121.91" y1="391.19" x2="115.78" y2="306.65"></line>
+    <line class="route-line" x1="121.91" y1="391.19" x2="122.45" y2="363.69"></line>
+    <line class="route-line" x1="121.91" y1="391.19" x2="181.47" y2="313.22"></line>
+    <line class="route-line" x1="121.91" y1="391.19" x2="80.42" y2="322.21"></line>
+    <line class="route-line" x1="121.91" y1="391.19" x2="124.27" y2="365.77"></line>
+    <line class="route-line" x1="121.91" y1="391.19" x2="206.35" y2="180.37"></line>
+    <line class="route-line" x1="121.91" y1="391.19" x2="204.83" y2="185.93"></line>
+    <line class="route-line" x1="121.91" y1="391.19" x2="181.46" y2="129.76"></line>
+    <line class="route-line" x1="121.91" y1="391.19" x2="216.19" y2="518.21"></line>
+    <line class="route-line" x1="121.91" y1="391.19" x2="203.42" y2="558.16"></line>
+    <line class="route-line" x1="121.91" y1="391.19" x2="431.45" y2="316.4"></line>
+    <line class="route-line" x1="121.91" y1="391.19" x2="189.66" y2="580.23"></line>
+    <line class="route-line" x1="121.91" y1="391.19" x2="380.69" y2="365.29"></line>
+  </g>
   <g id="pulse-layer"></g>
-  <g id="city-layer"></g>
+  <g id="city-layer">
+    <circle class="city-dot origin" cx="121.91" cy="391.19" r="6"></circle>
+    <text class="city-label origin-label" x="131.91" y="383.19">Mumbai</text>
+    <g class="city" data-name="Pune">
+      <circle class="city-dot" cx="141.47" cy="402.93" r="3.5"></circle>
+      <text class="city-label" x="148.47" y="396.93">Pune</text>
+    </g>
+    <g class="city" data-name="Ahmedabad">
+      <circle class="city-dot" cx="115.78" cy="306.65" r="3.5"></circle>
+      <text class="city-label" x="122.78" y="300.65">Ahmedabad</text>
+    </g>
+    <g class="city" data-name="Vapi">
+      <circle class="city-dot" cx="122.45" cy="363.69" r="3.5"></circle>
+      <text class="city-label" x="129.45" y="357.69">Vapi</text>
+    </g>
+    <g class="city" data-name="Indore">
+      <circle class="city-dot" cx="181.47" cy="313.22" r="3.5"></circle>
+      <text class="city-label" x="188.47" y="307.22">Indore</text>
+    </g>
+    <g class="city" data-name="Rajkot">
+      <circle class="city-dot" cx="80.42" cy="322.21" r="3.5"></circle>
+      <text class="city-label" x="87.42" y="316.21">Rajkot</text>
+    </g>
+    <g class="city" data-name="Silvassa">
+      <circle class="city-dot" cx="124.27" cy="365.77" r="3.5"></circle>
+      <text class="city-label" x="131.26999999999998" y="359.77">Silvassa</text>
+    </g>
+    <g class="city" data-name="Delhi NCR">
+      <circle class="city-dot" cx="206.35" cy="180.37" r="3.5"></circle>
+      <text class="city-label" x="213.35" y="174.37">Delhi NCR</text>
+    </g>
+    <g class="city" data-name="Gurugram">
+      <circle class="city-dot" cx="204.83" cy="185.93" r="3.5"></circle>
+      <text class="city-label" x="211.83" y="179.93">Gurugram</text>
+    </g>
+    <g class="city" data-name="Ludhiana">
+      <circle class="city-dot" cx="181.46" cy="129.76" r="3.5"></circle>
+      <text class="city-label" x="188.46" y="123.75999999999999">Ludhiana</text>
+    </g>
+    <g class="city" data-name="Bengaluru">
+      <circle class="city-dot" cx="216.19" cy="518.21" r="3.5"></circle>
+      <text class="city-label" x="223.19" y="512.21">Bengaluru</text>
+    </g>
+    <g class="city" data-name="Coimbatore">
+      <circle class="city-dot" cx="203.42" cy="558.16" r="3.5"></circle>
+      <text class="city-label" x="210.42" y="552.16">Coimbatore</text>
+    </g>
+    <g class="city" data-name="Kolkata">
+      <circle class="city-dot" cx="431.45" cy="316.4" r="3.5"></circle>
+      <text class="city-label" x="438.45" y="310.4">Kolkata</text>
+    </g>
+    <g class="city" data-name="Kochi">
+      <circle class="city-dot" cx="189.66" cy="580.23" r="3.5"></circle>
+      <text class="city-label" x="196.66" y="574.23">Kochi</text>
+    </g>
+    <g class="city" data-name="Bhubaneswar">
+      <circle class="city-dot" cx="380.69" cy="365.29" r="3.5"></circle>
+      <text class="city-label" x="387.69" y="359.29">Bhubaneswar</text>
+    </g>
+  </g>
 </svg>
 <script>
 (function () {
-  var ORIGIN = { name: 'Mumbai', lat: 19.0760, lon: 72.8777 };
-  var CITIES = [
-    { name: 'Pune', lat: 18.5204, lon: 73.8567 },
-    { name: 'Ahmedabad', lat: 23.0225, lon: 72.5714 },
-    { name: 'Vapi', lat: 20.3714, lon: 72.9047 },
-    { name: 'Indore', lat: 22.7196, lon: 75.8577 },
-    { name: 'Rajkot', lat: 22.3039, lon: 70.8022 },
-    { name: 'Silvassa', lat: 20.2738, lon: 72.9962 },
-    { name: 'Delhi NCR', lat: 28.7041, lon: 77.1025 },
-    { name: 'Gurugram', lat: 28.4595, lon: 77.0266 },
-    { name: 'Ludhiana', lat: 30.9010, lon: 75.8573 },
-    { name: 'Bengaluru', lat: 12.9716, lon: 77.5946 },
-    { name: 'Coimbatore', lat: 11.0168, lon: 76.9558 },
-    { name: 'Kolkata', lat: 22.5726, lon: 88.3639 },
-    { name: 'Kochi', lat: 9.9312, lon: 76.2673 },
-    { name: 'Bhubaneswar', lat: 20.2961, lon: 85.8245 }
-  ];
-  var W = 640, H = 640;
-  var svg = d3.select('#stage');
+  // Precomputed India outline + city positions (baked in at build time from
+  // vendor/countries-110m.json via d3-geo, so the map renders immediately
+  // from static markup above with no runtime fetch/library dependency —
+  // this avoids the map appearing blank on a slow/first-time page load).
+  var svg = document.getElementById('stage');
+  var originXY = { x: 121.91, y: 391.19 };
+  var CITIES = [{"name": "Pune", "x": 141.47, "y": 402.93}, {"name": "Ahmedabad", "x": 115.78, "y": 306.65}, {"name": "Vapi", "x": 122.45, "y": 363.69}, {"name": "Indore", "x": 181.47, "y": 313.22}, {"name": "Rajkot", "x": 80.42, "y": 322.21}, {"name": "Silvassa", "x": 124.27, "y": 365.77}, {"name": "Delhi NCR", "x": 206.35, "y": 180.37}, {"name": "Gurugram", "x": 204.83, "y": 185.93}, {"name": "Ludhiana", "x": 181.46, "y": 129.76}, {"name": "Bengaluru", "x": 216.19, "y": 518.21}, {"name": "Coimbatore", "x": 203.42, "y": 558.16}, {"name": "Kolkata", "x": 431.45, "y": 316.4}, {"name": "Kochi", "x": 189.66, "y": 580.23}, {"name": "Bhubaneswar", "x": 380.69, "y": 365.29}];
   var started = false;
 
-  fetch('vendor/countries-110m.json')
-    .then(function (r) { return r.json(); })
-    .then(function (topo) {
-      var countries = topojson.feature(topo, topo.objects.countries);
-      var india = countries.features.filter(function (f) { return f.id === '356'; })[0];
-      if (!india) return;
+  var cityLayer = document.getElementById('city-layer');
+  var pulseLayer = document.getElementById('pulse-layer');
 
-      var projection = d3.geoMercator().fitSize([W - 40, H - 40], india);
-      projection.translate([
-        projection.translate()[0] + 20,
-        projection.translate()[1] + 20
-      ]);
-      var path = d3.geoPath().projection(projection);
-
-      svg.select('#outline-layer')
-        .append('path')
-        .attr('class', 'india-outline')
-        .attr('d', path(india));
-
-      var originXY = projection([ORIGIN.lon, ORIGIN.lat]);
-
-      var routeLayer = svg.select('#route-layer');
-      CITIES.forEach(function (c) {
-        var xy = projection([c.lon, c.lat]);
-        c.x = xy[0]; c.y = xy[1];
-        routeLayer.append('line')
-          .attr('class', 'route-line')
-          .attr('x1', originXY[0]).attr('y1', originXY[1])
-          .attr('x2', xy[0]).attr('y2', xy[1]);
-      });
-
-      var cityLayer = svg.select('#city-layer');
-      cityLayer.append('circle')
-        .attr('class', 'city-dot origin')
-        .attr('cx', originXY[0]).attr('cy', originXY[1]).attr('r', 6);
-      cityLayer.append('text')
-        .attr('class', 'city-label origin-label')
-        .attr('x', originXY[0] + 10).attr('y', originXY[1] - 8)
-        .text(ORIGIN.name);
-
-      CITIES.forEach(function (c) {
-        c.dot = cityLayer.append('circle')
-          .attr('class', 'city-dot')
-          .attr('cx', c.x).attr('cy', c.y).attr('r', 3.5);
-        c.label = cityLayer.append('text')
-          .attr('class', 'city-label')
-          .attr('x', c.x + 7).attr('y', c.y - 6)
-          .text(c.name);
-        c.dot.on('mouseenter', function () {
-          c.dot.transition().duration(120).attr('r', 7);
-          c.label.classed('hovered', true);
-        }).on('mouseleave', function () {
-          c.dot.transition().duration(120).attr('r', 3.5);
-          c.label.classed('hovered', false);
-        });
-      });
-
-      var pulseLayer = svg.select('#pulse-layer');
-
-      function animateRoute(i) {
-        if (i >= CITIES.length) return;
-        var c = CITIES[i];
-        var dur = 260;
-        var group = pulseLayer.append('g');
-        var glow = group.append('circle')
-          .attr('class', 'pulse-dot')
-          .attr('r', 4.5)
-          .attr('cx', originXY[0]).attr('cy', originXY[1]);
-        var core = group.append('circle')
-          .attr('class', 'pulse-core')
-          .attr('r', 1.8)
-          .attr('cx', originXY[0]).attr('cy', originXY[1]);
-
-        function tick(sel) {
-          sel.transition()
-            .duration(dur)
-            .ease(d3.easeLinear)
-            .attrTween('cx', function () { return d3.interpolateNumber(originXY[0], c.x); })
-            .attrTween('cy', function () { return d3.interpolateNumber(originXY[1], c.y); });
-        }
-        tick(glow);
-        tick(core);
-        core.transition().duration(dur).ease(d3.easeLinear).on('end', function () {
-          group.remove();
-          c.dot.classed('lit', true);
-          setTimeout(function () { animateRoute(i + 1); }, 25);
-        });
-      }
-
-      window.addEventListener('message', function (e) {
-        if (e.data === 'play' && !started) {
-          started = true;
-          animateRoute(0);
-        }
-      });
+  CITIES.forEach(function (c) {
+    var g = cityLayer.querySelector('g[data-name="' + c.name.replace(/"/g, '\\"') + '"]');
+    if (!g) return;
+    var dot = g.querySelector('.city-dot');
+    var label = g.querySelector('.city-label');
+    c.dot = dot;
+    c.label = label;
+    dot.addEventListener('mouseenter', function () {
+      dot.setAttribute('r', 7);
+      label.classList.add('hovered');
     });
+    dot.addEventListener('mouseleave', function () {
+      dot.setAttribute('r', 3.5);
+      label.classList.remove('hovered');
+    });
+  });
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function animateRoute(i) {
+    if (i >= CITIES.length) return;
+    var c = CITIES[i];
+    var dur = 260;
+    var start = null;
+
+    var ns = 'http://www.w3.org/2000/svg';
+    var group = document.createElementNS(ns, 'g');
+    var glow = document.createElementNS(ns, 'circle');
+    glow.setAttribute('class', 'pulse-dot');
+    glow.setAttribute('r', 4.5);
+    glow.setAttribute('cx', originXY.x);
+    glow.setAttribute('cy', originXY.y);
+    var core = document.createElementNS(ns, 'circle');
+    core.setAttribute('class', 'pulse-core');
+    core.setAttribute('r', 1.8);
+    core.setAttribute('cx', originXY.x);
+    core.setAttribute('cy', originXY.y);
+    group.appendChild(glow);
+    group.appendChild(core);
+    pulseLayer.appendChild(group);
+
+    function step(ts) {
+      if (start === null) start = ts;
+      var t = Math.min(1, (ts - start) / dur);
+      var x = lerp(originXY.x, c.x, t);
+      var y = lerp(originXY.y, c.y, t);
+      glow.setAttribute('cx', x); glow.setAttribute('cy', y);
+      core.setAttribute('cx', x); core.setAttribute('cy', y);
+      if (t < 1) {
+        requestAnimationFrame(step);
+      } else {
+        pulseLayer.removeChild(group);
+        if (c.dot) c.dot.classList.add('lit');
+        setTimeout(function () { animateRoute(i + 1); }, 25);
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  function startAnimation() {
+    if (started) return;
+    started = true;
+    animateRoute(0);
+  }
+
+  // Preferred trigger: parent page tells us when the map has scrolled into view.
+  window.addEventListener('message', function (e) {
+    if (e.data === 'play') startAnimation();
+  });
+
+  // Fallback: if no 'play' message arrives shortly after load (e.g. the map
+  // was already in view before the parent's listener attached, or the
+  // message was missed), start the animation anyway so it never gets stuck.
+  setTimeout(startAnimation, 1200);
 })();
 </script>
 </body>
