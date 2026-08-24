@@ -147,7 +147,7 @@
   function animateRoute(i) {
     if (i >= CITIES.length) return;
     var c = CITIES[i];
-    var dur = 260;
+    var dur = 520;
     var start = null;
 
     var ns = 'http://www.w3.org/2000/svg';
@@ -178,7 +178,7 @@
       } else {
         pulseLayer.removeChild(group);
         if (c.dot) c.dot.classList.add('lit');
-        setTimeout(function () { animateRoute(i + 1); }, 25);
+        setTimeout(function () { animateRoute(i + 1); }, 50);
       }
     }
     requestAnimationFrame(step);
