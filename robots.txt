@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alloysteelindiaagency.github.io/sitemap.xml
+Sitemap: https://alloysteelindiaagency.com/sitemap.xml
