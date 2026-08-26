@@ -195,10 +195,25 @@
     if (e.data === 'play') startAnimation();
   });
 
-  // Fallback: if no 'play' message arrives shortly after load (e.g. the map
-  // was already in view before the parent's listener attached, or the
-  // message was missed), start the animation anyway so it never gets stuck.
-  setTimeout(startAnimation, 1200);
+  // Fallback: watch our own visibility directly too, in case the parent's
+  // postMessage never arrives (e.g. the page is embedded somewhere without
+  // that listener, or the message gets missed). This still only starts the
+  // animation once the map is actually visible — it does not fire blindly
+  // on load, so scrolling down still reveals the animation in progress.
+  if ('IntersectionObserver' in window) {
+    var fallbackObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          startAnimation();
+          fallbackObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    fallbackObserver.observe(document.body);
+  } else {
+    // Very old browsers without IntersectionObserver support: just start.
+    setTimeout(startAnimation, 1200);
+  }
 })();
 </script>
 </body>
